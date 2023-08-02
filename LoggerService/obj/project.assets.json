@@ -201,20 +201,6 @@
         "runtime": {
           "bin/placeholder/Contracts.dll": {}
         }
-      },
-      "LoggerService/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Contracts": "1.0.0",
-          "NLog.Extensions.Logging": "5.3.2"
-        },
-        "compile": {
-          "bin/placeholder/LoggerService.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LoggerService.dll": {}
-        }
       }
     }
   },
@@ -510,16 +496,12 @@
       "type": "project",
       "path": "../Contracts/Contracts.csproj",
       "msbuildProject": "../Contracts/Contracts.csproj"
-    },
-    "LoggerService/1.0.0": {
-      "type": "project",
-      "path": "../LoggerService/LoggerService.csproj",
-      "msbuildProject": "../LoggerService/LoggerService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "LoggerService >= 1.0.0"
+      "Contracts >= 1.0.0",
+      "NLog.Extensions.Logging >= 5.3.2"
     ]
   },
   "packageFolders": {
@@ -528,11 +510,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Asp_dotnet\\CompanyEmployees\\CompanyEmployees\\CompanyEmployees.csproj",
-      "projectName": "CompanyEmployees",
-      "projectPath": "E:\\Asp_dotnet\\CompanyEmployees\\CompanyEmployees\\CompanyEmployees.csproj",
+      "projectUniqueName": "E:\\Asp_dotnet\\CompanyEmployees\\LoggerService\\LoggerService.csproj",
+      "projectName": "LoggerService",
+      "projectPath": "E:\\Asp_dotnet\\CompanyEmployees\\LoggerService\\LoggerService.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\Asp_dotnet\\CompanyEmployees\\CompanyEmployees\\obj\\",
+      "outputPath": "E:\\Asp_dotnet\\CompanyEmployees\\LoggerService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -549,8 +531,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Asp_dotnet\\CompanyEmployees\\LoggerService\\LoggerService.csproj": {
-              "projectPath": "E:\\Asp_dotnet\\CompanyEmployees\\LoggerService\\LoggerService.csproj"
+            "E:\\Asp_dotnet\\CompanyEmployees\\Contracts\\Contracts.csproj": {
+              "projectPath": "E:\\Asp_dotnet\\CompanyEmployees\\Contracts\\Contracts.csproj"
             }
           }
         }
@@ -564,6 +546,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "NLog.Extensions.Logging": {
+            "target": "Package",
+            "version": "[5.3.2, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -576,9 +564,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

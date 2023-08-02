@@ -1,5 +1,6 @@
 ﻿using CompanyEmployees.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
+using NLog;
 // builder thuộc type WebApplicationBuilder
 /* WebApplicationBuilder
     - Thêm cấu hình cho dự án bằng cách sử dụng thuộc tính builder.Configuration
@@ -9,7 +10,7 @@ using Microsoft.AspNetCore.HttpOverrides;
 */
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+LogManager.Setup().LoadConfigurationFromFile(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
 builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIntegration();
